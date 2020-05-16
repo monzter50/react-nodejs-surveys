@@ -5,6 +5,7 @@ var userShema = new Schema({
   googleID: String,
   name: String,
   age: Number,
+  token:String,
   date: { type: Date, default: Date.now },
 });
 
