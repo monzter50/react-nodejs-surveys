@@ -1,11 +1,25 @@
-import React from 'react'
-
+import React from "react";
+import { Typography, Container } from "@material-ui/core/";
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    height: "100vh",
+  },
+}));
 const Dashboard = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
-}
+const classes = useStyles();
+  return (
+    <Container maxWidth="lg">
+      <div className={classes.container}>
+        <Typography variant="h1">Dashboard</Typography>
+        <Typography variant="h6">Welcome to Epayco</Typography>
+      </div>
+    </Container>
+  );
+};
 
-export default Dashboard
+export default Dashboard;

@@ -1,8 +1,13 @@
-import React from "react";
+import React,{useEffect} from "react";
+import Payments from './Payments';
+import store from "../../redux/store";
+import {
+    fetchUser,
+} from "../../redux/actions/index";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -21,7 +26,10 @@ const useStyles = makeStyles((theme) => ({
 const removeToken = (event) =>{
   localStorage.removeItem('token')
 }
-const Header = ({ user }) => {
+const Header = ({ match,user }) => {
+  useEffect(() => {
+    store.dispatch(fetchUser());
+  }, [user])
   const classes = useStyles();
   return (
     <AppBar position="static">
@@ -42,11 +50,15 @@ const Header = ({ user }) => {
           </Button>
           ) : (
             <div>
-            <Button color="inherit" href="/api/logout">
-              Add credits
-            </Button>
-            <Button  color="inherit" href="/api/logout">
-              Add thing
+
+            <Payments>
+              <Button color="inherit" >
+                Add credits
+              </Button>
+            </Payments>
+            
+            <Button  color="inherit" >
+              Credit: {user.credits}
             </Button>
             <Button onClick={()=>removeToken} color="inherit" href="/api/logout">
               Logout
