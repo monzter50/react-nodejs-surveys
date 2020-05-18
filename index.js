@@ -24,12 +24,6 @@ app.use(passport.session());
 authRoutes(app);
 billingRoutes(app);
 
-app.get('/', (req, res) =>{
-  res.json({
-      hi:'there!',
-      bye:'Dude'
-    });
-});
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
   // like our main.js file, or main.css file!
