@@ -6,14 +6,14 @@
   "engines": {
     "node": "12.14.0",
     "npm": "6.13.4",
-    "yarn":"1.22.4"
+    "yarn": "1.22.4"
   },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
     "client": "yarn --cwd ./client start",
     "db": "concurrently \"yarn run dev\" \"yarn run client\"",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false yarn --cwd ./client install && yarn --cwd ./client run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --cwd ./client install && yarn --cwd ./client run build"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "nodemon": "1.11.0",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
+    "sendgrid": "^5.2.3",
     "stripe": "^8.52.0"
   }
 }

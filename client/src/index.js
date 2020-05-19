@@ -6,6 +6,9 @@ import store from "./redux/store";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
 import './styles/styles.css';
+import axios from 'axios';
+window.axios = axios;
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
