@@ -1,5 +1,5 @@
 import React,{useEffect} from "react";
-import Payments from './Payments';
+import Payments from '../Molecules/Payments';
 import store from "../../redux/store";
 import {
     fetchUser,

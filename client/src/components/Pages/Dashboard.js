@@ -1,23 +1,30 @@
 import React from "react";
-import { Typography, Container } from "@material-ui/core/";
+import {Link} from 'react-router-dom';
+import { Typography, Container,Fab } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
+import {Add as AddIcon} from '@material-ui/icons/';
+import SurveyList from '../Organism/SurveyList';
 const useStyles = makeStyles((theme) => ({
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    height: "100vh",
+
+  fab: {
+    position: 'absolute',
+    bottom: theme.spacing(2),
+    right: theme.spacing(3),
   },
 }));
 const Dashboard = () => {
 const classes = useStyles();
   return (
     <Container maxWidth="lg">
-      <div className={classes.container}>
-        <Typography variant="h1">Dashboard</Typography>
-        <Typography variant="h6">Welcome to Epayco</Typography>
-      </div>
+    
+     <SurveyList/>
+
+      <Link to={'/surveys/news'}>
+       <Fab color="primary" className={classes.fab} aria-label="add">
+       
+        <AddIcon />
+      </Fab>
+      </Link>
     </Container>
   );
 };
