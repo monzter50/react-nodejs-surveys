@@ -5,6 +5,6 @@ module.exports={
     cookieKey: process.env.COOKIE_KEY,
     stipePublishableKey:process.env.STRIPE_PUBLISHABLE_KEY,
     stipeSecretKey:process.env.STRIPE_SECRET_KEY,
-    sendGridKey:env.process.SEND_GRID_KEY,
+    sendGridKey:process.env.SEND_GRID_KEY,
     redirectDomain:process.env.REDIRECT_DOMAIN
 };
